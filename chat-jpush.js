@@ -80,3 +80,5 @@ function pushDirect (appkey, secretkey, isProduct, sender, messageContent, rid) 
 // Variables exported by this module can be imported by other packages and
 // applications. See chat-jpush-tests.js for an example of importing.
 export const name = 'chat-jpush';
+export const roomPush = pushRoomMessage;
+export const directPush = pushDirect;
