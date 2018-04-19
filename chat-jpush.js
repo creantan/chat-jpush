@@ -22,6 +22,7 @@ function pushRoomMessage (appkey, secretkey, isProduct, roomTitle, sender, messa
         audience = JPush.alias(['ex_yeyp001'])
     }
 
+    console.log(`invote pushRoomMessage`)
     const model = client.push()
         model.setPlatform('ios', 'android')
         .setAudience(audience)
@@ -30,7 +31,7 @@ function pushRoomMessage (appkey, secretkey, isProduct, roomTitle, sender, messa
         .setOptions(null, 60, null, isProduct)
         .send(function(err, res) {
             if (err) {
-                console.log(err.message)
+                console.log(`error message: ${err.message}`)
             } else {
                 console.log('Sendno: ' + res.sendno)
                 console.log('Msg_id: ' + res.msg_id)
@@ -57,6 +58,7 @@ function pushDirect (appkey, secretkey, isProduct, sender, messageContent, rid) 
         audience = JPush.alias(['ex_yeyp001'])
     }
 
+    console.log(`invote pushRoomMessage`)
     const model = client.push()
         model.setPlatform('ios', 'android')
         .setAudience(audience)
@@ -65,7 +67,7 @@ function pushDirect (appkey, secretkey, isProduct, sender, messageContent, rid) 
         .setOptions(null, 60, null, isProduct)
         .send(function(err, res) {
             if (err) {
-                console.log(err.message)
+                console.log(`error message: ${err.message}`)
             } else {
                 console.log('Sendno: ' + res.sendno)
                 console.log('Msg_id: ' + res.msg_id)
